@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TravelogueEntry" representedClassName="TravelogueEntry" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="rawImage" optional="YES" attributeType="Binary"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="rawTravelogueEntries" inverseEntity="Trip"/>
+    </entity>
+    <entity name="Trip" representedClassName="Trip" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="rawTravelogueEntries" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TravelogueEntry" inverseName="trip" inverseEntity="TravelogueEntry"/>
+    </entity>
+    <elements>
+        <element name="TravelogueEntry" positionX="51.91400146484375" positionY="-40.3272705078125" width="128" height="118"/>
+        <element name="Trip" positionX="316.2932739257812" positionY="24.3306884765625" width="128" height="73"/>
+    </elements>
+</model>
